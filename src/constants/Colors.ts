@@ -5,6 +5,7 @@ export default {
   light: {
     text: '#000',
     background: '#fff',
+    cardBackground: '#e8e8e8',
     tint: tintColorLight,
     tabIconDefault: '#ccc',
     tabIconSelected: tintColorLight,
@@ -12,6 +13,7 @@ export default {
   dark: {
     text: '#fff',
     background: '#000',
+    cardBackground: '#181818',
     tint: tintColorDark,
     tabIconDefault: '#ccc',
     tabIconSelected: tintColorDark,

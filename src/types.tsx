@@ -9,13 +9,21 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 declare global {
   namespace ReactNavigation {
+    // @ts-ignore
     type RootParamList = RootStackParamList
   }
 }
 
 export type RootStackParamList = {
   Root: NavigatorScreenParams<RootTabParamList> | undefined;
+
+  // Screens
+  StoreDetail: { storeId: string };
+
+  // Modal
   Modal: undefined;
+
+  // Not Found
   NotFound: undefined;
 };
 
@@ -25,8 +33,10 @@ export type RootStackScreenProps<Screen extends keyof RootStackParamList> = Nati
 >;
 
 export type RootTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
+  Search: undefined;
+  Favorite: undefined;
+  Map: undefined;
+  MyPage: undefined;
 };
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<
