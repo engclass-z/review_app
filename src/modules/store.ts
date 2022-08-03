@@ -62,7 +62,7 @@ export type StoreType = {
   media?: SnsType[];
   isDeleted?: boolean;
 
-  set_users: () => void;
+  set_users: (users: UserInStore[]) => void;
   preview: StorePreview;
 };
 
@@ -109,7 +109,7 @@ export default class Store implements StoreType {
     },
     description?: string,
     media?: SnsType[],
-) {
+  ) {
     this.id = id;
     this.title = title;
     this.kind = kind;
@@ -125,10 +125,13 @@ export default class Store implements StoreType {
     this.description = description;
     this.media = media;
 
-    this.set_users();
+    // TODO: 消す
+    this.set_users([]);
   }
 
-  set_users(): void {
+  set_users(users: UserInStore[]): void {
+    // TODO: 直す
+    // this.users = users;
     const _users = USERS.filter((user) => this.id === user.inStore?.storeId);
 
     if (_users.length) {
